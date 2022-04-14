@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CommentsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/app_bar_layout_comments"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/comments_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Comments"
+                    android:textSize="18sp"
+                    android:maxLines="1"
+                    android:textStyle="bold"
+                    android:layout_centerVertical="true"
+
+                    />
+
+
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <ImageView
+        android:id="@+id/post_image_comment"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/app_bar_layout_comments"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile">
+
+    </ImageView>
+
+    <LinearLayout
+        android:id="@+id/segmented_control_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/post_image_comment"
+        android:background="@drawable/button_black_background"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+
+        <Button
+            android:id="@+id/comment_segmented_button_menu"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="メニュー"
+            style="?android:attr/buttonBarButtonStyle"
+            android:textSize="12dp"
+            android:layout_marginRight="6dp"
+            />
+        <Button
+            android:id="@+id/comment_segmented_button_price"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="価格"
+            style="?android:attr/buttonBarButtonStyle"
+            android:textSize="12dp"
+            android:layout_marginRight="6dp"
+            />
+
+        <Button
+            android:id="@+id/comment_segmented_button_time"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="営業時間"
+            style="?android:attr/buttonBarButtonStyle"
+            android:textSize="12dp"
+            android:layout_marginRight="6dp"
+            />
+
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/commentRelative"
+        android:layout_below="@id/segmented_control_comment"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/recycler_view_comments_menu"
+        android:visibility="invisible"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/commentRelative"
+        android:layout_below="@id/segmented_control_comment"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/recycler_view_comments_price"
+        android:visibility="invisible"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/commentRelative"
+        android:layout_below="@id/segmented_control_comment"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/recycler_view_comments_time"
+        android:visibility="invisible"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <RelativeLayout
+        android:id="@+id/commentRelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="4dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image_comment"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/profile"></de.hdodenhof.circleimageview.CircleImageView>
+
+        <EditText
+            android:id="@+id/add_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="14dp"
+            android:layout_toLeftOf="@+id/post_comment_btn"
+            android:layout_toRightOf="@id/profile_image_comment"
+            android:hint="情報をコメントしましょう。"
+            android:padding="8dp">
+
+        </EditText>
+
+        <TextView
+            android:id="@+id/post_comment_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="6dp"
+            android:text="投稿"
+            android:textSize="18dp"
+            android:textStyle="bold">
+
+        </TextView>
+
+    </RelativeLayout>
+</RelativeLayout>

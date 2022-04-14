@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/app_bar_layout_profile_frag"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/profile_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/top_profile_frag"
+                >
+
+                <TextView
+                    android:id="@+id/profile_fragment_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:maxLines="1"
+                    android:text="username"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+
+                    />
+
+                <ImageView
+                    android:id="@+id/notification_profile_frag"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_toLeftOf="@+id/settings_profile_frag"
+                    android:src="@drawable/heart_not_clicked"
+                    android:visibility="gone"
+                    />
+
+                <ImageView
+                    android:id="@+id/settings_profile_frag"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/settings" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="4dp"
+        android:id="@+id/search_bar_profile_frag"
+        android:layout_below="@+id/app_bar_layout_profile_frag"
+        >
+
+        <ImageView
+            android:id="@+id/search_fragment_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/search"
+
+            />
+
+        <EditText
+            android:id="@+id/search_edit_text_profile_frag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="19dp"
+            android:layout_marginBottom="12dp"
+
+            android:layout_toEndOf="@+id/search_fragment_icon"
+            android:hint="ユーザを検索する..." />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search_bar_profile_frag"
+        android:visibility="gone"
+        >
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search_bar_profile_frag"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:id="@+id/header_profile_frag"
+
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/pro_image_profile_frag"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/profile"
+
+                    />
+
+                <LinearLayout
+                    android:layout_width="190dp"
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical"
+
+
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginLeft="7dp"
+                            android:orientation="vertical"
+                            >
+
+                            <TextView
+                                android:id="@+id/total_posts"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="12dp"
+                                android:textStyle="bold"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="投稿"
+                                android:textSize="10dp"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginLeft="7dp"
+                            android:orientation="vertical"
+                            >
+
+                            <TextView
+                                android:id="@+id/total_followers"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="12dp"
+                                android:textStyle="bold"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="フォロワー"
+                                android:textSize="10dp"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="7dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            >
+                            <TextView
+                                android:id="@+id/total_following"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="12dp"
+                                android:textStyle="bold"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="フォロー中"
+                                android:textSize="10dp"
+                                />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/edit_account_settings_btn"
+                        android:layout_width="170dp"
+                        android:layout_height="32dp"
+                        android:textSize="10dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/buttons_background"
+                        android:text="プロフィールの編集"
+
+                        />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mid_bar"
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/bio_profile_frag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="This is my bio"
+                        android:textSize="13dp" />
+
+                    <ImageButton
+                        android:id="@+id/link_to_twitter_profile_frag"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_toLeftOf="@+id/link_to_instagram_profile_frag"
+                        android:background="@drawable/twitter_icon"
+                        android:text=""
+                        android:textAllCaps="false"
+
+                        />
+
+                    <ImageButton
+                        android:id="@+id/link_to_instagram_profile_frag"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/instagram_icon"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerInside"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textAllCaps="false"
+
+                        />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/segmented_control_profile_frag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/button_black_background"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                >
+
+                <Button
+                    android:id="@+id/post_image_btn_profile_frag"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ヨリミチ"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:textSize="12dp"
+                    android:layout_marginRight="6dp"
+                    />
+
+                <Button
+                    android:id="@+id/liked_image_btn_profile_frag"
+                    android:layout_width="1dp"
+                    android:layout_height="49dp"
+                    android:scaleType="fitCenter"
+                    android:layout_weight="1"
+                    android:text="いいねしたヨリミチ"
+                    android:textSize="12dp"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_marginLeft="6dp"
+                    />
+
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_uploaded_grid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_liked_grid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </FrameLayout>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

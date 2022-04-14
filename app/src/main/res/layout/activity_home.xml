@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/home_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="6dp"
+            >
+
+            <TextView
+                android:id="@+id/home_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:maxLines="1"
+                android:text="フォロー中の投稿"
+                android:textSize="18dp"
+                android:textStyle="bold"
+
+                />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <!--    <Button-->
+<!--        android:id="@+id/segmented_control_home_following"-->
+<!--        style="?android:attr/buttonBarButtonStyle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="6dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:layout_marginBottom="6dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:text="フォロー中"-->
+<!--        android:textSize="12dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/view_pager_2_following"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/segmented_control_home_recommended"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/segmented_control_home_recommended"-->
+<!--        style="?android:attr/buttonBarButtonStyle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="6dp"-->
+<!--        android:layout_marginBottom="6dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:scaleType="fitCenter"-->
+<!--        android:text="おすすめ"-->
+<!--        android:textSize="12dp"-->
+
+<!--        app:layout_constraintBottom_toTopOf="@+id/view_pager_2_following"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/segmented_control_home_following"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager_2_following"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_home"
+        android:orientation="vertical" />
+
+<!--    <androidx.viewpager2.widget.ViewPager2-->
+<!--        android:id="@+id/view_pager_2_recommended"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_width="0dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/adView_home"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:orientation="vertical" />-->
+
+
+<!--        <com.google.android.gms.ads.AdView-->
+<!--            android:id="@+id/adView_home"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/nav_view_home"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            android:layout_marginTop="6dp"-->
+<!--            android:layout_marginBottom="6dp"-->
+<!--            app:adSize="BANNER"-->
+<!--            >-->
+
+<!--        </com.google.android.gms.ads.AdView>-->
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nav_view_home"
+            android:layout_width="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="60dp"
+
+            app:labelVisibilityMode="unlabeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/bottom_nav_menu" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

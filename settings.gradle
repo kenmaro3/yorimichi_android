@@ -1,0 +1,25 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        jcenter() // Warning: this repository is going to shut down soon
+        maven {
+            url 'https://api.mapbox.com/downloads/v2/releases/maven'
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                // Do not change the username below.
+                // This should always be `mapbox` (not your username).
+                username = "mapbox"
+                // Use the secret token you stored in gradle.properties as the password
+                //password = MAPBOX_DOWNLOADS_TOKEN
+                password = "sk.eyJ1Ijoia2VubWFybyIsImEiOiJja3h3dnY3bnIwY3M3MndycTF4Y2p5M3pyIn0.C5v8zg0eihcfjWHZzyCRGg"
+            }
+        }
+    }
+}
+rootProject.name = "yorimichi-android"
+include ':app'

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1056988201822",
+    "project_id": "yorimichi-dev",
+    "storage_bucket": "yorimichi-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056988201822:android:a601a388da1400b69605cf",
+        "android_client_info": {
+          "package_name": "com.agrimetal.yorimichi2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056988201822-a9pce8h30q2mmfh3uinh6plu3l22hgcb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx4nVRD3oep_rNCl9ZbGscKXG4xAKNmMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056988201822-a9pce8h30q2mmfh3uinh6plu3l22hgcb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1056988201822-vcmfntqqo3l5m3cgmnjc6gpl7k97dp9p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.agrimetal.yorimichi2-dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

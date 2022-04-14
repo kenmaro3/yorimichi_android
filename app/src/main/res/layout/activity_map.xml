@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/coordinatorlayout_map"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+
+        >
+
+        <com.mapbox.maps.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:mapbox_cameraTargetLat="40.7128"
+            app:mapbox_cameraTargetLng="-74.0060"
+            app:mapbox_cameraZoom="9.0" >
+
+        </com.mapbox.maps.MapView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="-350dp"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:id="@+id/onmap_current_location_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_corner10_pad_big"
+                app:srcCompat="@drawable/compass" />
+
+<!--            <com.google.android.gms.ads.AdView-->
+<!--                xmlns:ads="http://schemas.android.com/apk/res-auto"-->
+<!--                android:id="@+id/adView_map"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:layout_marginBottom="20dp"-->
+<!--                ads:adSize="BANNER"-->
+<!--                >-->
+<!--            </com.google.android.gms.ads.AdView>-->
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+
+                    >
+
+                    <ImageView
+                        android:id="@+id/onmap_query_db_button"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:srcCompat="@drawable/globe"
+                        android:background="@drawable/rounded_corner10_pad_big"
+                        />
+
+                    <TextView
+                        android:id="@+id/onmap_query_db_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_corner5"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:text="ユーザ投稿検索" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+
+                <LinearLayout
+                    android:id="@+id/onmap_go_to_place_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+
+                    >
+
+                    <ImageView
+                        android:id="@+id/onmap_go_to_native_map"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:srcCompat="@drawable/right"
+                        android:background="@drawable/rounded_corner10_pad_big"
+                        />
+
+                    <TextView
+                        android:id="@+id/onmap_go_to_native_map_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_corner5"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:text="ヨリミチ開始"
+
+                        />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <!-- 下から引っ張り出すView (BottomSheet) -->
+    <LinearLayout
+        android:id="@+id/bottomSheetLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="84dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <!-- BottomSheetに表示したいViewを設定する -->
+        <LinearLayout
+            android:id="@+id/segmented_control_profile_frag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/button_black_background"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            >
+
+            <Button
+                android:id="@+id/onmap_find_posts_around_button"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="周辺の投稿"
+                style="?android:attr/buttonBarButtonStyle"
+                android:textSize="12dp"
+                android:layout_marginRight="6dp"
+                />
+
+            <Button
+                android:id="@+id/onmap_find_posts_liked_button"
+                android:layout_width="1dp"
+                android:layout_height="49dp"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:text="いいねした投稿"
+                android:textSize="12dp"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_marginLeft="6dp"
+                />
+
+
+
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_map_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            >
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_map_post_liked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    >
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/post_user_profile_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:padding="5dp"
+        android:src="@drawable/profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/post_user_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:text="user name"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/post_user_profile_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/post_more_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+
+
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="24dp"
+        android:src="@android:drawable/ic_input_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <ImageView
+        android:id="@+id/post_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/post_location_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Location Title"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/post_info_count"
+        app:layout_constraintBottom_toTopOf="@+id/post_location_subtitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/post_location_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Location Sub Title"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/post_info_count"
+        app:layout_constraintBottom_toTopOf="@+id/post_datetime"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/post_datetime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Location Date"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/each_post_on_map_button"
+        app:layout_constraintEnd_toStartOf="@+id/post_info_count"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/post_caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Caption"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/post_location_title"
+        app:layout_constraintEnd_toStartOf="@+id/post_info_count"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/each_post_on_map_button"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="16dp"
+        android:text="地図上で見る"
+        app:layout_constraintBottom_toBottomOf="@+id/post_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/post_like_button"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/post_like_count"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rounded_corner10"
+        app:srcCompat="@drawable/heart_not_clicked" />
+
+    <ImageView
+        android:id="@+id/post_info_button"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/post_info_count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_info_details" />
+
+    <ImageView
+        android:id="@+id/post_share_button"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/each_post_on_map_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rounded_corner10_pad_big"
+        app:srcCompat="@android:drawable/ic_menu_share"
+        />
+
+    <TextView
+        android:id="@+id/post_like_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/post_info_button"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/post_info_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/post_share_button"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

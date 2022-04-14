@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment_container"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            >
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/app_bar_layout_search"
+                >
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/home_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Explore"
+                        android:textStyle="bold"
+                        android:textSize="24dp"
+
+                        >
+
+
+                    </TextView>
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/search_fragment_icon"-->
+<!--                            android:layout_width="40dp"-->
+<!--                            android:layout_height="40dp"-->
+<!--                            android:src="@drawable/search"-->
+
+<!--                            />-->
+
+<!--                        <EditText-->
+<!--                            android:id="@+id/search_edit_text"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+
+<!--                            android:layout_marginStart="6dp"-->
+<!--                            android:layout_marginEnd="15dp"-->
+<!--                            android:layout_marginRight="19dp"-->
+
+<!--                            android:layout_toEndOf="@+id/search_fragment_icon"-->
+<!--                            android:hint="キーワード検索..." />-->
+
+<!--                    </RelativeLayout>-->
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/app_bar_layout_search"
+                android:visibility="gone"
+                >
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <LinearLayout
+                android:id="@+id/explore_promotion_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/app_bar_layout_search"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+
+                    >
+
+                    <ImageView
+                        android:id="@+id/explore_promotion_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/megaphone"
+                        android:scaleType="centerCrop"
+                        android:layout_gravity="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/explore_promotaion_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="プロモーション"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="12dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_explore_promotion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:padding="10dp"
+                    >
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <Button
+                    android:id="@+id/explore_promotion_footer_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recycler_view_explore_promotion"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/rounded_corner10_pad_big_gray"
+                    android:text="もっとプロモーションを見る"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textColorHighlight="#F44336"
+                    android:textSize="14dp" />
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/explore_recent_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/explore_promotion_container"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+
+                    >
+
+                    <ImageView
+                        android:id="@+id/explore_recent_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/clock"
+                        android:scaleType="centerCrop"
+                        android:layout_gravity="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/explore_recent_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:text="最近の投稿"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_explore_recent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:padding="10dp"
+                    >
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <Button
+                    android:id="@+id/explore_recent_footer_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recycler_view_explore_recent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="20dp"
+                    android:text="もっと最近の投稿を見る"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/explore_popular_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/explore_recent_container"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/explore_popular_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/heart_not_clicked"
+                        android:scaleType="centerCrop"
+                        android:layout_gravity="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/explore_popular_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="人気の投稿"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="12dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_explore_popular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:padding="10dp"
+                    >
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <Button
+                    android:id="@+id/explore_popular_footer_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recycler_view_explore_popular"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="20dp"
+                    android:text="もっと人気の投稿を見る"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/explore_nearby_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/explore_popular_container"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/explore_nearby_icon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/compass"
+                        android:scaleType="centerCrop"
+                        android:layout_gravity="center"
+                        />
+
+                    <TextView
+                        android:id="@+id/explore_nearby_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="周辺の投稿"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="12dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_explore_nearby"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:padding="10dp"
+                    >
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <Button
+                    android:id="@+id/explore_nearby_footer_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recycler_view_explore_nearby"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="20dp"
+                    android:text="もっと周辺の投稿を見る"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14dp" />
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</ScrollView>

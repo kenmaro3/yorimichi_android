@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray"
+    tools:context=".SignInActivity">
+
+<!--    <ImageView-->
+<!--        android:id="@+id/logo"-->
+<!--        android:layout_width="160dp"-->
+<!--        android:layout_height="90dp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="140dp"-->
+<!--        android:background="@drawable/instagram"-->
+<!--        android:backgroundTint="@color/white"-->
+
+<!--        />-->
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="250dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
+        android:gravity="center"
+        android:text="Yorimichi"
+        android:textColor="@color/white"
+        android:textSize="52dp">
+
+    </TextView>
+
+
+    <EditText
+        android:id="@+id/email_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/rounded_corner10_pad_big"
+        android:hint="メールアドレス..."
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/colorGray" />
+
+    <EditText
+        android:id="@+id/password_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@+id/email_login"
+        android:textColorHint="@color/colorGray"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:background="@drawable/rounded_corner10_pad_big"
+        android:hint="パスワード..."
+        />
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password_login"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/rounded_corner10_pad_big"
+        android:text="ログイン"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="17dp" />
+
+    <Button
+        android:id="@+id/signup_link_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_corner10_pad_big"
+        android:text="アカウントの作成"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="17dp" />
+
+</RelativeLayout>

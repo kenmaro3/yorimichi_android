@@ -1,0 +1,95 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'com.google.gms.google-services'
+}
+
+apply plugin: 'com.google.gms.google-services'  // Google Services plugin
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        configurations.all {
+            resolutionStrategy { force 'androidx.core:core-ktx:1.6.0' }
+        }
+        applicationId "com.agrimetal.yorimichi2"
+        minSdk 26
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        //jvmTarget = '1.8'
+        jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.14.0"
+    implementation "androidx.activity:activity-ktx:1.4.0"
+    //implementation "com.theartofdev.edmodo:android-image-cropper:2.8.+"
+    //implementation 'com.github.CanHub:Android-Image-Cropper:3.1.3'
+    implementation 'com.github.CanHub:Android-Image-Cropper:4.2.0'
+
+
+    implementation platform('com.google.firebase:firebase-bom:29.0.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-core'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-database-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'com.mapbox.maps:android:10.2.0'
+    //implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:9.6.0'
+
+    // MaterialDesign
+    implementation 'com.google.android.material:material:1.0.0'
+
+    //google places api
+    implementation 'com.google.android.libraries.places:places:2.5.0'
+
+    implementation 'com.google.android.gms:play-services-ads:20.6.0'
+
+    implementation 'com.google.firebase:firebase-messaging:20.3.0'
+
+    implementation "com.google.firebase:firebase-inappmessaging-ktx"
+
+    implementation 'com.github.khoyron:Actionsheet-android:4'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+}
