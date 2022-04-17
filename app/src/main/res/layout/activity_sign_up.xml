@@ -33,18 +33,18 @@
 
     <EditText
         android:id="@+id/username_signup"
-        android:background="@drawable/rounded_corner10_pad_big"
-        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/logo"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="6dp"
         android:layout_marginRight="20dp"
-        android:inputType="textEmailAddress"
-        android:textColorHint="@color/colorGray"
+        android:background="@drawable/rounded_corner10_pad_big"
         android:hint="ユーザーネーム..."
-        />
+        android:textColor="@color/black"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:textColorHint="@color/colorGray" />
 
 
     <EditText
@@ -53,6 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/username_signup"
         android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
         android:layout_marginTop="6dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/rounded_corner10_pad_big"
@@ -72,6 +73,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:inputType="textPassword"
+        android:textColor="@color/black"
         android:textColorHint="@color/colorGray"
         android:hint="パスワード..."
         />
